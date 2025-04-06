@@ -36,9 +36,9 @@ if __name__ == "__main__":
     num_measurements = 10
     for size in range(min_size, max_size + 1, 100):
         times = []
-        matrix_a_file = f"test_matrix/A/matrix_a_{size}.txt"
-        matrix_b_file = f"test_matrix/B/matrix_b_{size}.txt"
-        result_file = f"test_matrix/Result/result_{size}.txt"
+        matrix_a_file = f"test_matrix_10/A/matrix_a_{size}.txt"
+        matrix_b_file = f"test_matrix_10/B/matrix_b_{size}.txt"
+        result_file = f"test_matrix_10/Result/result_{size}.txt"
         for _ in range(num_measurements):
             generate_and_save_matrix(matrix_a_file, size)
             generate_and_save_matrix(matrix_b_file, size)

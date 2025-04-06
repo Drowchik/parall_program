@@ -3,6 +3,7 @@
 #include <vector>
 #include <stdexcept>
 #include <iomanip>
+#include <omp.h>
 
 
 using namespace std;
@@ -34,10 +35,16 @@ namespace matrix {
 
 			Matrix result(rows, other.getCols());
 
-			for (size_t i = 0; i < rows; ++i) {
-				for (size_t j = 0; j < other.getCols(); ++j) {
-					for (size_t k = 0; k < cols; ++k) {
-						result(i, j) += data[i][k] * other(k, j);
+			#pragma omp parallel num_threads(10)
+			{
+				#pragma omp for
+				for (int i = 0; i < rows; ++i) {
+					for (int j = 0; j < other.getCols(); ++j) {
+						int sum = 0;
+						for (size_t k = 0; k < cols; ++k) {
+							sum += data[i][k] * other(k, j);
+						}
+						result(i, j) = sum;
 					}
 				}
 			}

@@ -14,9 +14,21 @@ if(MSVC)
     endif()
 endif()
 
+find_package(OpenMP REQUIRED)
+
+
 add_library(parall_program SHARED "include/program/program.h" "src/program.cpp")
 target_include_directories(parall_program PUBLIC "include")
 
+if(OpenMP_CXX_FOUND)
+    target_link_libraries(parall_program PRIVATE OpenMP::OpenMP_CXX)
+endif()
+
 
 add_executable(console "console/console.cpp")
-target_link_libraries(console parall_program)
+target_link_libraries(console PRIVATE parall_program)
+
+
+if(OpenMP_CXX_FOUND)
+    target_link_libraries(console PRIVATE OpenMP::OpenMP_CXX)
+endif()
