@@ -41,15 +41,26 @@ void writeMatrixToFile(const string& filename, const Matrix& matrix) {
 
 
 int main(int argc, char* argv[]) {
-    Matrix A = readMatrixFromFile(argv[1]);
-    Matrix B = readMatrixFromFile(argv[2]);
-    auto start = chrono::high_resolution_clock::now();
+    MPI_Init(&argc, &argv);
 
-    Matrix C = A * B;
+    int rank;
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 
-    auto end = chrono::high_resolution_clock::now();
-    chrono::duration<double> duration = end - start;
-    writeMatrixToFile(argv[3], C);
-    cout << duration.count() << endl;
+    Matrix A, B;
+    if (rank == 0) {
+        A = readMatrixFromFile(argv[1]);
+        B = readMatrixFromFile(argv[2]);
+    }
+
+    double start = MPI_Wtime();
+    Matrix C = A.multiplyMPI(B);
+    double end = MPI_Wtime();
+
+    if (rank == 0) {
+        writeMatrixToFile(argv[3], C);
+        cout << "Elapsed time: " << (end - start) << " sec" << endl;
+    }
+
+    MPI_Finalize();
     return 0;
 }

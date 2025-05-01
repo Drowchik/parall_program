@@ -30,7 +30,7 @@ def read_matrix_from_file(filename: str) -> np.ndarray:
 
 if __name__ == "__main__":
     results = {}
-    cpp_program = "out\\build\\x64-Debug\\console.exe"
+    cpp_program = "./build/console"
     min_size = 100
     max_size = 1500
     num_measurements = 10

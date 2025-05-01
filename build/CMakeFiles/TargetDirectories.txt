@@ -1,0 +1,4 @@
+/Users/denis/parall_program/build/CMakeFiles/parall_program.dir
+/Users/denis/parall_program/build/CMakeFiles/console_mpi.dir
+/Users/denis/parall_program/build/CMakeFiles/edit_cache.dir
+/Users/denis/parall_program/build/CMakeFiles/rebuild_cache.dir

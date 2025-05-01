@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wextra -pedantic -O3 -DNDEBUG -arch arm64 -dynamiclib -Wl,-headerpad_max_install_names -o libparall_program.dylib -install_name @rpath/libparall_program.dylib CMakeFiles/parall_program.dir/src/program.cpp.o  -Wl,-rpath,@loader_path /opt/homebrew/Cellar/open-mpi/5.0.7/lib/libmpi.dylib
