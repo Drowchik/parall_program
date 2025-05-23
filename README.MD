@@ -49,3 +49,19 @@
 
 
 ![alt text](image-5.png)
+
+###  Королев
+
+- Большое спасибо ему https://github.com/Amitroki
+
+###  8 процессов
+![alt text](image-4.png)
+
+###  4 процесса
+![alt text](image-6.png)
+
+###  2 процесса
+![alt text](image-7.png)
+
+###  1 процесса
+![alt text](image-8.png)
