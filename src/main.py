@@ -12,11 +12,18 @@ def generate_and_save_matrix(filename: str, size: int) -> None:
             file.write(" ".join(row) + "\n")
 
 
-def run_matrix_multiplication(cpp_program, matrix_a_file, matrix_b_file, result_file):
-    result = subprocess.run([cpp_program, matrix_a_file, matrix_b_file, result_file],
-                            capture_output=True, text=True)
-    return float(result.stdout.strip())
-
+def run_matrix_multiplication(cpp_program, matrix_a_file, matrix_b_file, result_file, num_processes=1):
+    command = [
+        "mpiexec",  # часто быстрее чем mpirun
+        "-np", str(num_processes),
+        cpp_program,
+        matrix_a_file,
+        matrix_b_file,
+        result_file
+    ]
+    
+    result = subprocess.run(command, capture_output=True, text=True, check=True)
+    return max(float(t) for t in result.stdout.strip().split('\n') if t)  # берем максимальное время
 
 def read_matrix_from_file(filename: str) -> np.ndarray:
     with open(filename, "r") as file:
@@ -30,10 +37,11 @@ def read_matrix_from_file(filename: str) -> np.ndarray:
 
 if __name__ == "__main__":
     results = {}
-    cpp_program = "./build/console"
+    cpp_program = "./build/console_mpi"
     min_size = 100
     max_size = 1500
     num_measurements = 10
+    num_processes = 8
     for size in range(min_size, max_size + 1, 100):
         times = []
         matrix_a_file = f"test_matrix/A/matrix_a_{size}.txt"
@@ -46,7 +54,8 @@ if __name__ == "__main__":
                 cpp_program,
                 matrix_a_file,
                 matrix_b_file,
-                result_file
+                result_file,
+                num_processes
             )
             times.append(time_taken)
 
@@ -63,7 +72,7 @@ if __name__ == "__main__":
         avg_time = sum(times) / num_measurements
         results[size] = avg_time
 
-    output_file = "results.txt"
+    output_file = "results8.txt"
     with open(output_file, "w") as file:
         file.write("Matrix Size (NxN)\tAverage Time (seconds)\n")
         for size, avg_time in results.items():

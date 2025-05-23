@@ -506,3 +506,210 @@ events:
         
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindMPI.cmake:1286 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindMPI.cmake:1330 (_MPI_try_staged_settings)"
+      - "/opt/homebrew/share/cmake/Modules/FindMPI.cmake:1653 (_MPI_check_lang_works)"
+      - "CMakeLists.txt:13 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/Users/denis/parall_program/build/CMakeFiles/CMakeScratch/TryCompile-Vs7r3Y"
+      binary: "/Users/denis/parall_program/build/CMakeFiles/CMakeScratch/TryCompile-Vs7r3Y"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -Wall -Wextra -pedantic"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/denis/parall_program/build/CMakeFiles/CMakeScratch/TryCompile-Vs7r3Y'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_d6344/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_d6344.dir/build.make CMakeFiles/cmTC_d6344.dir/build
+        Building CXX object CMakeFiles/cmTC_d6344.dir/test_mpi.cpp.o
+        /usr/bin/c++  -isystem /opt/homebrew/Cellar/open-mpi/5.0.7/include -Wall -Wextra -pedantic  -std=gnu++2b -arch arm64 -MD -MT CMakeFiles/cmTC_d6344.dir/test_mpi.cpp.o -MF CMakeFiles/cmTC_d6344.dir/test_mpi.cpp.o.d -o CMakeFiles/cmTC_d6344.dir/test_mpi.cpp.o -c /Users/denis/parall_program/build/CMakeFiles/CMakeScratch/TryCompile-Vs7r3Y/test_mpi.cpp
+        Linking CXX executable cmTC_d6344
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d6344.dir/link.txt --verbose=1
+        /usr/bin/c++  -Wall -Wextra -pedantic  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_d6344.dir/test_mpi.cpp.o -o cmTC_d6344  /opt/homebrew/Cellar/open-mpi/5.0.7/lib/libmpi.dylib
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindMPI.cmake:1286 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindMPI.cmake:1680 (_MPI_try_staged_settings)"
+      - "CMakeLists.txt:13 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/Users/denis/parall_program/build/CMakeFiles/CMakeScratch/TryCompile-upx6hT"
+      binary: "/Users/denis/parall_program/build/CMakeFiles/CMakeScratch/TryCompile-upx6hT"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -Wall -Wextra -pedantic"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/denis/parall_program/build/CMakeFiles/CMakeScratch/TryCompile-upx6hT'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_f676e/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_f676e.dir/build.make CMakeFiles/cmTC_f676e.dir/build
+        Building CXX object CMakeFiles/cmTC_f676e.dir/test_mpi.cpp.o
+        /usr/bin/c++  -isystem /opt/homebrew/Cellar/open-mpi/5.0.7/include -Wall -Wextra -pedantic  -std=gnu++2b -arch arm64 -MD -MT CMakeFiles/cmTC_f676e.dir/test_mpi.cpp.o -MF CMakeFiles/cmTC_f676e.dir/test_mpi.cpp.o.d -o CMakeFiles/cmTC_f676e.dir/test_mpi.cpp.o -c /Users/denis/parall_program/build/CMakeFiles/CMakeScratch/TryCompile-upx6hT/test_mpi.cpp
+        Linking CXX executable cmTC_f676e
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f676e.dir/link.txt --verbose=1
+        /usr/bin/c++  -Wall -Wextra -pedantic  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_f676e.dir/test_mpi.cpp.o -o cmTC_f676e  /opt/homebrew/Cellar/open-mpi/5.0.7/lib/libmpi.dylib
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindMPI.cmake:1286 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindMPI.cmake:1330 (_MPI_try_staged_settings)"
+      - "/opt/homebrew/share/cmake/Modules/FindMPI.cmake:1653 (_MPI_check_lang_works)"
+      - "CMakeLists.txt:13 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/Users/denis/parall_program/build/CMakeFiles/CMakeScratch/TryCompile-FTdYI3"
+      binary: "/Users/denis/parall_program/build/CMakeFiles/CMakeScratch/TryCompile-FTdYI3"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -Wall -Wextra -pedantic"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/denis/parall_program/build/CMakeFiles/CMakeScratch/TryCompile-FTdYI3'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_ccbde/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_ccbde.dir/build.make CMakeFiles/cmTC_ccbde.dir/build
+        Building CXX object CMakeFiles/cmTC_ccbde.dir/test_mpi.cpp.o
+        /usr/bin/c++  -isystem /opt/homebrew/Cellar/open-mpi/5.0.7/include -Wall -Wextra -pedantic  -std=gnu++2b -arch arm64 -MD -MT CMakeFiles/cmTC_ccbde.dir/test_mpi.cpp.o -MF CMakeFiles/cmTC_ccbde.dir/test_mpi.cpp.o.d -o CMakeFiles/cmTC_ccbde.dir/test_mpi.cpp.o -c /Users/denis/parall_program/build/CMakeFiles/CMakeScratch/TryCompile-FTdYI3/test_mpi.cpp
+        Linking CXX executable cmTC_ccbde
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ccbde.dir/link.txt --verbose=1
+        /usr/bin/c++  -Wall -Wextra -pedantic  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_ccbde.dir/test_mpi.cpp.o -o cmTC_ccbde  /opt/homebrew/Cellar/open-mpi/5.0.7/lib/libmpi.dylib
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindMPI.cmake:1286 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindMPI.cmake:1680 (_MPI_try_staged_settings)"
+      - "CMakeLists.txt:13 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/Users/denis/parall_program/build/CMakeFiles/CMakeScratch/TryCompile-ViMZ33"
+      binary: "/Users/denis/parall_program/build/CMakeFiles/CMakeScratch/TryCompile-ViMZ33"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -Wall -Wextra -pedantic"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/denis/parall_program/build/CMakeFiles/CMakeScratch/TryCompile-ViMZ33'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_4b680/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_4b680.dir/build.make CMakeFiles/cmTC_4b680.dir/build
+        Building CXX object CMakeFiles/cmTC_4b680.dir/test_mpi.cpp.o
+        /usr/bin/c++  -isystem /opt/homebrew/Cellar/open-mpi/5.0.7/include -Wall -Wextra -pedantic  -std=gnu++2b -arch arm64 -MD -MT CMakeFiles/cmTC_4b680.dir/test_mpi.cpp.o -MF CMakeFiles/cmTC_4b680.dir/test_mpi.cpp.o.d -o CMakeFiles/cmTC_4b680.dir/test_mpi.cpp.o -c /Users/denis/parall_program/build/CMakeFiles/CMakeScratch/TryCompile-ViMZ33/test_mpi.cpp
+        Linking CXX executable cmTC_4b680
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4b680.dir/link.txt --verbose=1
+        /usr/bin/c++  -Wall -Wextra -pedantic  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_4b680.dir/test_mpi.cpp.o -o cmTC_4b680  /opt/homebrew/Cellar/open-mpi/5.0.7/lib/libmpi.dylib
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindMPI.cmake:1286 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindMPI.cmake:1330 (_MPI_try_staged_settings)"
+      - "/opt/homebrew/share/cmake/Modules/FindMPI.cmake:1653 (_MPI_check_lang_works)"
+      - "CMakeLists.txt:13 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/Users/denis/parall_program/build/CMakeFiles/CMakeScratch/TryCompile-CqnvLs"
+      binary: "/Users/denis/parall_program/build/CMakeFiles/CMakeScratch/TryCompile-CqnvLs"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -Wall -Wextra -pedantic"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/denis/parall_program/build/CMakeFiles/CMakeScratch/TryCompile-CqnvLs'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_5b076/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_5b076.dir/build.make CMakeFiles/cmTC_5b076.dir/build
+        Building CXX object CMakeFiles/cmTC_5b076.dir/test_mpi.cpp.o
+        /usr/bin/c++  -isystem /opt/homebrew/Cellar/open-mpi/5.0.7/include -Wall -Wextra -pedantic  -std=gnu++2b -arch arm64 -MD -MT CMakeFiles/cmTC_5b076.dir/test_mpi.cpp.o -MF CMakeFiles/cmTC_5b076.dir/test_mpi.cpp.o.d -o CMakeFiles/cmTC_5b076.dir/test_mpi.cpp.o -c /Users/denis/parall_program/build/CMakeFiles/CMakeScratch/TryCompile-CqnvLs/test_mpi.cpp
+        Linking CXX executable cmTC_5b076
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5b076.dir/link.txt --verbose=1
+        /usr/bin/c++  -Wall -Wextra -pedantic  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_5b076.dir/test_mpi.cpp.o -o cmTC_5b076  /opt/homebrew/Cellar/open-mpi/5.0.7/lib/libmpi.dylib
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindMPI.cmake:1286 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindMPI.cmake:1680 (_MPI_try_staged_settings)"
+      - "CMakeLists.txt:13 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/Users/denis/parall_program/build/CMakeFiles/CMakeScratch/TryCompile-PVlenB"
+      binary: "/Users/denis/parall_program/build/CMakeFiles/CMakeScratch/TryCompile-PVlenB"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -Wall -Wextra -pedantic"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/denis/parall_program/build/CMakeFiles/CMakeScratch/TryCompile-PVlenB'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_53893/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_53893.dir/build.make CMakeFiles/cmTC_53893.dir/build
+        Building CXX object CMakeFiles/cmTC_53893.dir/test_mpi.cpp.o
+        /usr/bin/c++  -isystem /opt/homebrew/Cellar/open-mpi/5.0.7/include -Wall -Wextra -pedantic  -std=gnu++2b -arch arm64 -MD -MT CMakeFiles/cmTC_53893.dir/test_mpi.cpp.o -MF CMakeFiles/cmTC_53893.dir/test_mpi.cpp.o.d -o CMakeFiles/cmTC_53893.dir/test_mpi.cpp.o -c /Users/denis/parall_program/build/CMakeFiles/CMakeScratch/TryCompile-PVlenB/test_mpi.cpp
+        Linking CXX executable cmTC_53893
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_53893.dir/link.txt --verbose=1
+        /usr/bin/c++  -Wall -Wextra -pedantic  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_53893.dir/test_mpi.cpp.o -o cmTC_53893  /opt/homebrew/Cellar/open-mpi/5.0.7/lib/libmpi.dylib
+        
+      exitCode: 0
+...

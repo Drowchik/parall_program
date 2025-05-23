@@ -1,50 +1,45 @@
 #include <iostream>
 #include <fstream>
-#include <chrono>
-#include "program/program.h"
+#include <mpi.h>
+#include <vector>
+#include "../include/program/program.h"
 
 using namespace std;
 using namespace matrix;
 
 Matrix readMatrixFromFile(const string& filename) {
     ifstream file(filename);
-    if (!file.is_open()) {
-        throw runtime_error("Unable to open file: " + filename);
-    }
+    if (!file) throw runtime_error("Cannot open file " + filename);
 
     size_t rows, cols;
     file >> rows >> cols;
-
-    Matrix matrix(rows, cols);
-
-    for (size_t i = 0; i < rows; ++i) {
-        for (size_t j = 0; j < cols; ++j) {
-            file >> matrix(i, j);
-        }
-    }
-
-    file.close();
-    return matrix;
+    Matrix mat(rows, cols);
+    for (size_t i = 0; i < rows; ++i)
+        for (size_t j = 0; j < cols; ++j)
+            file >> mat(i, j);
+    return mat;
 }
 
-void writeMatrixToFile(const string& filename, const Matrix& matrix) {
+void writeMatrixToFile(const string& filename, const Matrix& mat) {
     ofstream file(filename);
-    file << matrix.getRows() << " " << matrix.getCols() << endl;
-    for (size_t i = 0; i < matrix.getRows(); ++i) {
-        for (size_t j = 0; j < matrix.getCols(); ++j) {
-            file << matrix(i, j) << " ";
-        }
+    file << mat.getRows() << " " << mat.getCols() << endl;
+    for (size_t i = 0; i < mat.getRows(); ++i) {
+        for (size_t j = 0; j < mat.getCols(); ++j)
+            file << mat(i, j) << " ";
         file << endl;
     }
-    file.close();
 }
 
-
-int main(int argc, char* argv[]) {
+int main(int argc, char** argv) {
     MPI_Init(&argc, &argv);
-
     int rank;
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+
+    if (argc < 4) {
+        if (rank == 0) std::cerr << "Usage: ./program A.txt B.txt C.txt\n";
+        MPI_Finalize();
+        return 1;
+    }
 
     Matrix A, B;
     if (rank == 0) {
@@ -52,15 +47,16 @@ int main(int argc, char* argv[]) {
         B = readMatrixFromFile(argv[2]);
     }
 
-    double start = MPI_Wtime();
-    Matrix C = A.multiplyMPI(B);
-    double end = MPI_Wtime();
+    double start_time = MPI_Wtime();
+    Matrix C = A.multiply_parallel(B);
+    double end_time = MPI_Wtime();
 
     if (rank == 0) {
         writeMatrixToFile(argv[3], C);
-        cout << "Elapsed time: " << (end - start) << " sec" << endl;
+        std::cout << (end_time - start_time) << "\n";
     }
 
     MPI_Finalize();
     return 0;
 }
+

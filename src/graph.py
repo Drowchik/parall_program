@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 if __name__ == "__main__":
     sizes = []
     times = []
-    with open('results.txt', 'r') as file:
+    with open('/Users/denis/parall_program/results.txt', 'r') as file:
         next(file)
         for line in file:
             if line.strip():
